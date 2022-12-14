@@ -13,6 +13,8 @@ export class StickyNoteComponent implements OnInit {
 
   todos: Todo[] = [];
 
+  showValidationErrors : boolean = false;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
@@ -21,10 +23,15 @@ export class StickyNoteComponent implements OnInit {
    }
 
   onFormSubmit(form: NgForm){
-    console.log("FORM SUBMITTED")
-    console.log(form)
+       if (form.invalid) return alert("Form is invalid");
+    // none of these code will be reachable if the form is invalid
+  
+ 
 
-    this.dataService.addTodo(new Todo(form.value.text))
+    this.dataService.addTodo(new Todo(form.value.text));
+
+    this.showValidationErrors = true;
+    form.reset()
 
   }
 

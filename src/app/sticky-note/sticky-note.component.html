@@ -1,17 +1,14 @@
 
-
-
-
-
-
 <div class="container">
     <div class="add-todo-box">
 
         <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
             <h2> New Sticky Note</h2>
-            <div class="field is-grouped">
+            <div class="field is-grouped" style="margin: 0">
                 <p class="control is-expanded">
-                  <input ngModel required name="text" class="input" type="text"  
+                    <!-- here you can enter the max or min length of text required-->
+                    <!-- # is made into the ngModel object-->
+                    <input ngModel #todoTextField="ngModel" required minlength="3" maxlength="250" name="text" class="input" type="text"  
                          placeholder="Enter new Note...">
                 </p>
                 <p class="control">
@@ -21,8 +18,13 @@
                   </button>
                 </p>
               </div>
-
-        </form>
+              
+              <div *ngIf="todoTextField.invalid && showValidationErrors" >
+              <p class="help is-danger" *ngIf="todoTextField.invalid" >Please enter text for your sticky-note</p>
+              <p class="help is-danger" *ngIf="todoTextField.invalid" >Sticky-note must be atleast 3 characters</p>
+              <p class="help is-danger" *ngIf="todoTextField.invalid" >Sticky-note can not exceed 250 characters</p>
+             </div>
+            </form>
 
     </div>
 </div>
