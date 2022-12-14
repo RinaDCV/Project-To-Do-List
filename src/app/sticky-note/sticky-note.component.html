@@ -1,0 +1,78 @@
+
+
+
+
+
+
+<div class="container">
+    <div class="add-todo-box">
+
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <h2> New Sticky Note</h2>
+            <div class="field is-grouped">
+                <p class="control is-expanded">
+                  <input ngModel required name="text" class="input" type="text"  
+                         placeholder="Enter new Note...">
+                </p>
+                <p class="control">
+                  <button type="submit" class="button">
+                    <i class="material-icons">add</i>
+                    ADD 
+                  </button>
+                </p>
+              </div>
+
+        </form>
+
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+
+        <div class="todo-list">
+            <div class="todo-item" *ngFor="let todo of todos" [class.completed]="todo.completed">
+                <div class="check-box">
+                    <i class="material-icons">done</i>
+                </div>
+                <div class="todo-text">
+                   
+                        {{ todo.text }}
+                
+                    <div class="todo-controls-box">
+                        <div class="todo-control-button">
+                        <i class="material-icons">edit</i>
+                    
+                        <i class="material-icons">delete</i>
+                         </div>  
+                    </div>
+                </div>
+            </div>
+
+
+                <!-- <div class="todo-item">
+                    <div class="check-box">
+                        <i class="material-icons">done</i>
+                    </div>
+                    <div class="todo-text">
+                        This is a placeholder for the todo text 
+
+                        <div class="todo-controls-box">
+                            <div class="todo-control-button">
+                            <i class="material-icons">edit</i>
+                        
+                            <i class="material-icons">delete</i>
+                            </div>    
+                        </div>
+
+                    </div>
+
+                </div> -->
+
+        </div>
+
+    </div>
+
+
+
+</section>

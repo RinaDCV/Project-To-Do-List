@@ -1,0 +1,155 @@
+
+h2{
+    font-size: medium;
+    text-align: left;
+    font-weight: bold;
+
+}
+
+.container {
+    width: 800px;
+    
+}
+
+.add-todo-box{
+    padding: 25px;
+ 
+    border-radius: 4px;
+    margin-top: -65px ;
+    background-color: white;
+    box-shadow: 4px 4px, 12px rgba(black 0.2px);;
+}
+
+button {
+    border:none;
+    background: linear-gradient(to right, rgb(238, 88, 150), rgb(240, 40, 82));
+    color:white;
+    font-weight: 660;
+
+}
+
+i.material-icons {
+    margin-right: 5px;
+    margin-left: -3px;
+
+
+}
+
+.todo-item {
+    display: flex;
+    align-items:center;
+    position: relative;
+
+    font-size: 18px;
+    padding: 35px 15px;
+    background-color: rgb(233, 233, 129);
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgb(189, 200, 211);
+
+}
+
+
+
+.todo-item .check-box{
+    display: flex;
+    flex-shrink: 0;
+    border: 2px solid  rgb(45, 172, 140);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    margin-right: 30px;
+    transition: .2s;
+    background-color: rgb(51, 192, 157);
+
+    
+
+    
+}
+
+.check-box i.material-icons{
+    font-size: 20px;
+    margin:auto;
+    margin-right: 5px;
+   
+
+    /* hide by default */
+    opacity: 0;
+
+    transition: opacity 0.2s;
+
+}
+
+.todo-item:hover .check-box i.material-icons{
+    
+    opacity: .30;
+
+}
+
+.todo-text .todo-control-button {
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    
+    
+    display: flex;
+
+          /* hide by default */
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(10px);
+
+          transition: opacity 0.2s visibility 0.2s;
+ 
+
+}
+
+.todo-item:hover .todo-control-button{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+
+    transition-delay: .4s;
+
+}
+
+
+
+.todo-controls-box .todo-control-button i.material-icons{
+   display: flex;
+   color:rgb(107, 107, 107);
+   text-align: center;
+   padding: 4px 2px 4px 4px;
+
+
+    
+
+}
+
+
+.todo-controls-box .todo-control-button i.material-icons:hover{
+    color: #333;
+    background: rgb(241, 245, 194);
+
+ 
+    
+}
+
+.todo-controls-box .todo-control-button i.material-icons:active{
+    background: rgb(133, 133, 133);
+
+}
+
+
+:first-of-type{
+
+    border-top-left-radius: 7px;
+    
+
+}
+
+:last-of-type {
+    
+    border-top-right-radius: 7px;
+
+}
