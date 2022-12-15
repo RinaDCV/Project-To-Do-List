@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo.models';
+import { StickyNote } from './stickyNote.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,32 +9,29 @@ export class DataService {
 
  //creating a propery to contain the data
  
- todos: Todo[] = [
-  new Todo('this is a test', true),
-  new Todo('loremloremloremloremloremloreloreloreloremloremlorememloremloreloreloreloremmmloreloremmmloremoremmmloreloremmmlorem')
- 
+  stickyNote:StickyNote [] = [
+   new StickyNote('this is a new test!', true),
+   new StickyNote( 'loren ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, molestiae facilis, exercitationem impedit vitae tenetur accusantium, non eius quos neque sint mollitia cum aperiam excepturi et laboriosam provident illo asperiores!')
+  ];
   
- ]
-
-
-
   constructor() { }
 
+
   //creating methods
-getAllTodos(){
-  return this.todos
+getAllStickyNote() {
+  return this.stickyNote
 }
 
-addTodo(todo: Todo) {
-  this.todos.push(todo)
+addstickyNote(stickyNote: StickyNote) {
+  this.stickyNote.push(stickyNote)
 }
 
-updateTodo(index: number, updatedTodo: Todo){
-  this.todos[index] = updatedTodo
+updateStickyNote(index: number, updatedStickyNote: StickyNote){
+  this.stickyNote[index] = updatedStickyNote
 }
 
-deleteTodo(index: number) {
-  this.todos.splice(index, 1)
+deleteStickyNote(index: number) {
+  this.stickyNote.splice(index, 1)
 }
 
 

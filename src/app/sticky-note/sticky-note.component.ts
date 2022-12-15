@@ -1,6 +1,6 @@
 import { NotExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../shared/todo.models'
+import { StickyNote } from '../shared/stickyNote.model';
 import { DataService } from '../shared/data.service'
 import { NgForm } from '@angular/forms';
 
@@ -11,26 +11,28 @@ import { NgForm } from '@angular/forms';
 })
 export class StickyNoteComponent implements OnInit {
 
-  todos: Todo[] = [];
+  stickyNote: StickyNote[] = [];
 
   showValidationErrors : boolean = false;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.todos = this.dataService.getAllTodos()
+    this.stickyNote = this.dataService.getAllStickyNote()
 
    }
 
   onFormSubmit(form: NgForm){
-       if (form.invalid) return alert("Form is invalid");
+
+       
     // none of these code will be reachable if the form is invalid
   
- 
 
-    this.dataService.addTodo(new Todo(form.value.text));
+    this.dataService.addstickyNote(new StickyNote(form.value.text));
 
-    this.showValidationErrors = true;
+    if (form.invalid) return alert("Form is invalid");
+
+    
     form.reset()
 
   }

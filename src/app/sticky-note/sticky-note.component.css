@@ -7,7 +7,8 @@ h2{
 }
 
 .container {
-    width: 800px;
+    width: 800px; 
+    
     
 }
 
@@ -17,21 +18,22 @@ h2{
     border-radius: 4px;
     margin-top: -65px ;
     background-color: white;
-    box-shadow: 4px 4px, 12px rgba(black 0.2px);;
+    border-bottom: 2px solid rgba(189, 200, 211, 0.599);
+    border-left: 2px solid rgba(189, 200, 211, 0.551);
 }
 
 button {
     border:none;
-    background: linear-gradient(to right, rgb(238, 88, 150), rgb(240, 40, 82));
+    background: linear-gradient(to right, rgb(238, 88, 150), rgb(240, 40, 67));
     color:white;
     font-weight: 660;
+    border-bottom: 2px solid rgb(189, 200, 211);
 
 }
 
 i.material-icons {
     margin-right: 5px;
     margin-left: -3px;
-
 
 }
 
@@ -40,30 +42,43 @@ i.material-icons {
     align-items:center;
     position: relative;
 
+    cursor: pointer;
+
     font-size: 18px;
     padding: 35px 15px;
-    background-color: rgb(233, 233, 129);
+    background: rgb(233, 233, 129);
     margin-bottom: 20px;
-    border-bottom: 2px solid rgb(189, 200, 211);
+    border-bottom: 2px solid rgba(189, 200, 211, 0.932);
 
 }
 
 
+.todo-item.completed .check-box{
+    background: rgb(26, 221, 172) ;
+    border-color: rgb(26, 221, 172) ;
+    
+}
+.todo-item.completed .check-box i.material-icons{
+
+    opacity: 1;
+}
 
 .todo-item .check-box{
     display: flex;
     flex-shrink: 0;
-    border: 2px solid  rgb(45, 172, 140);
+
+    border: 2px solid  rgb(194, 196, 195);
     border-radius: 50%;
+
+    margin-right: 30px;
+
     height: 30px;
     width: 30px;
+
     text-align: center;
-    margin-right: 30px;
-    transition: .2s;
-    background-color: rgb(51, 192, 157);
-
     
-
+    transition: background-color .2s;
+    
     
 }
 
@@ -72,7 +87,6 @@ i.material-icons {
     margin:auto;
     margin-right: 5px;
    
-
     /* hide by default */
     opacity: 0;
 
@@ -80,18 +94,22 @@ i.material-icons {
 
 }
 
-.todo-item:hover .check-box i.material-icons{
-    
-    opacity: .30;
+.todo-item:hover .check-box {
+    background:rgb(194, 196, 195);
 
 }
+.todo-item:hover .check-box i.material-icons{
+    opacity: .50;
+}
+
 
 .todo-text .todo-control-button {
     position: absolute;
     bottom: 0px;
     right: 5px;
     
-    
+    color: #333;
+
     display: flex;
 
           /* hide by default */
@@ -122,8 +140,6 @@ i.material-icons {
    padding: 4px 2px 4px 4px;
 
 
-    
-
 }
 
 
@@ -147,9 +163,8 @@ i.material-icons {
     
 
 }
-
 :last-of-type {
     
     border-top-right-radius: 7px;
 
-}
+} 
