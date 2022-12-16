@@ -25,12 +25,12 @@
                 </p>
               </div>
               
-          <div *ngIf="todoTextField.invalid" >
+          <div *ngIf="todoTextField.invalid && showValidationErrors">
                <p class="help is-danger" *ngIf="todoTextField!.errors?.['required']" 
                >Please enter text for your sticky-note</p>
               <p class="help is-danger" *ngIf="todoTextField!.errors?.['minlength']" 
                >Sticky-note must be atleast 3 characters</p>
-              <p class="help is-danger" *ngIf="todoTextField!.errors?.['maxlength']" 
+              <p class="help is-danger" *ngIf="todoTextField!.errors?.['maxlengthd']" 
                >Sticky-note can not exceed 250 characters</p>
           </div> 
             </form>
@@ -42,48 +42,17 @@
     <div class="container">
 
         <div class="todo-list">
-            <div class="todo-item" *ngFor="let stickyNote of stickyNote" 
-                [class.completed]="stickyNote.completed">
-                <div class="check-box">
-                    <i class="material-icons">done</i>
-                </div>
 
-                <div class="todo-text">     
-                        {{ stickyNote.text}}
-                    <div class="todo-controls-box">
-                        <div class="todo-control-button">
-                        <i class="material-icons">edit</i>
-                        
-                        <i class="material-icons">delete</i>
-                        </div> 
-                    </div>
-                </div>
+            <app-stack *ngFor= "let stickyNote of stickyNote" 
+                        [stickyNote]="stickyNote" 
+                        (stickyNoteClicked)="setCompleted(stickyNote)">
+            </app-stack>
 
             </div>
 
-                <!-- <div class="todo-item">
-                    <div class="check-box">
-                        <i class="material-icons">done</i>
-                    </div>
-                    <div class="todo-text">
-                        This is a placeholder for the todo text 
+     
 
-                        <div class="todo-controls-box">
-                            <div class="todo-control-button">
-                            <i class="material-icons">edit</i>
-                        
-                            <i class="material-icons">delete</i>
-                            </div>    
-                        </div>
-
-                    </div>
-
-                </div> -->
-
-        </div>
+        
 
     </div>
-
-
-
 </section>

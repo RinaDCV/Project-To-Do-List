@@ -13,7 +13,7 @@ export class StickyNoteComponent implements OnInit {
 
   stickyNote: StickyNote[] = [];
 
-  showValidationErrors : boolean = false;
+  showValidationErrors : boolean= false;
 
   constructor(private dataService: DataService) { }
 
@@ -23,18 +23,26 @@ export class StickyNoteComponent implements OnInit {
    }
 
   onFormSubmit(form: NgForm){
+   
 
-       
+
     // none of these code will be reachable if the form is invalid
   
-
     this.dataService.addstickyNote(new StickyNote(form.value.text));
 
-    if (form.invalid) return alert("Form is invalid");
-
-    
+    this.showValidationErrors= false;
     form.reset()
+    
+    if (form.invalid) return this.showValidationErrors= true;
+    else
+    return;
 
+
+  }
+
+  setCompleted(stickyNote: StickyNote){
+    //set stickyNote to completed
+    stickyNote.completed = !stickyNote.completed;
   }
 
 }

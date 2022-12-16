@@ -1,15 +1,18 @@
-<main>
-
-<section>
-
-    <div>
-        
+<div>
+<div class="todo-item" (click)="onStickyNoteClicked()" [class.completed]="stickyNote.completed">
+    <div class="check-box">
+        <i class="material-icons">done</i>
     </div>
-</section>
 
+    <div class="todo-text">
+        {{ stickyNote.text }}
+        <div class="todo-controls-box">
+            <div class="todo-control-button">
+                <i class="material-icons">edit</i>
 
-
-
-
-</main>
-
+                <i class="material-icons">delete</i>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

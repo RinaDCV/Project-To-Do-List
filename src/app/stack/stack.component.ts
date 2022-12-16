@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { StickyNote } from '../shared/stickyNote.model';
 import { StickyNoteComponent } from '../sticky-note/sticky-note.component';
 
 @Component({
@@ -6,6 +7,23 @@ import { StickyNoteComponent } from '../sticky-note/sticky-note.component';
   templateUrl: './stack.component.html',
   styleUrls: ['./stack.component.css']
 })
-export class StackComponent {
+export class StackComponent implements OnInit {
+  
+  @Input()
+  stickyNote!: StickyNote;
+
+  @Output() stickyNoteClicked = new EventEmitter<string>();
+
+
+  constructor() {}
+
+  ngOnInit():void {
+
+  }
+
+  onStickyNoteClicked(): void{
+    this.stickyNoteClicked.emit();
+
+  }
 
 }
