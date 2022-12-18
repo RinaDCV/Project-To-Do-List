@@ -11,6 +11,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NavComponent } from './nav/nav.component';
 import { StackComponent } from './stack/stack.component';
 import { StickyNoteComponent } from './sticky-note/sticky-note.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditNoteDialogComponent } from './edit-note-dialog/edit-note-dialog.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -18,12 +22,15 @@ import { StickyNoteComponent } from './sticky-note/sticky-note.component';
     HomePageComponent,
     NavComponent,
     StackComponent,
-    StickyNoteComponent
+    StickyNoteComponent,
+    EditNoteDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

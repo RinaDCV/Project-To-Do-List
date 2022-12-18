@@ -1,0 +1,41 @@
+<h1 class="title">Edit Note</h1>
+<div mat-dialog-content>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+        <div class="field">
+            <div class="control">
+                <input type="text" 
+                       class="input" 
+                       [ngModel]="stickyNote.text" 
+                       #textField = "ngModel"
+                       name="text"
+                       required 
+                       minlength="3" 
+                       maxlength="250" 
+                       placeholder="Type note here ...">
+            </div>
+            <div *ngIf ="textField.invalid">
+                <p class="help is-danger" *ngIf="textField!.errors?.['required']" 
+                >Please enter text for your sticky-note</p>
+               <p class="help is-danger" *ngIf="textField!.errors?.['minlength']" 
+                >Sticky-note must be atleast 3 characters</p>
+               <p class="help is-danger" *ngIf="textField!.errors?.['maxlengthd']" 
+                >Sticky-note can not exceed 250 characters</p>
+           </div> 
+        </div>
+
+        <br>
+
+        <div class= "field is-grouped is-goruped-right">
+            <div class="control"></div>
+                <button type="button" 
+                        class="button is-light" 
+                        (clcik)="closed()" >Cancel</button>
+        </div>
+
+            <div class="control">
+                 <button type="submit" class="button">
+                    <i class="material-icons">save</i>Save</button>
+                </div>
+        
+    </form>
+</div>

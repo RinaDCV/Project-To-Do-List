@@ -11,9 +11,10 @@ export class StackComponent implements OnInit {
   
   @Input()
   stickyNote!: StickyNote;
-
+//eventEmmiter is sending a signal that the stickynote was clicked
   @Output() stickyNoteClicked = new EventEmitter<string>();
-
+  @Output() editClicked = new EventEmitter<string>();
+  @Output() deleteClicked = new EventEmitter<string>();
 
   constructor() {}
 
@@ -24,6 +25,14 @@ export class StackComponent implements OnInit {
   onStickyNoteClicked(): void{
     this.stickyNoteClicked.emit();
 
+  }
+
+  onEditClicked():void{
+    this.editClicked.emit();
+  }
+
+  onDeleteClicked():void {
+    this.deleteClicked.emit();
   }
 
 }
