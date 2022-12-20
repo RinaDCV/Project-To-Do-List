@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container add-todo-box-container" >
     <div class="add-todo-box">
 <!--  after we import ngforms we can use ngForm on all forms and do some event binding-->
         <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
@@ -18,7 +18,7 @@
                                                         placeholder="Enter new Note...">
                 </p>
                 <p class="control">
-                  <!-- the button is disbled until the requirments are valid -->
+                  <!-- the button is disabled until the requirments are valid -->
                   <button type="submit" [disabled]="textField.invalid" class="button">
                     <i class="material-icons">add</i>
                     ADD 
@@ -37,7 +37,7 @@
             </form>
 
     </div>
-</div>.t
+</div>
 
 <section class="section">
     <div class="container">

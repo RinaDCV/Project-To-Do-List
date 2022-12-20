@@ -15,6 +15,7 @@
 }
 
 button {
+    display: inline-block;
     border:none;
     background: linear-gradient(to right, rgb(98, 88, 238), rgb(193, 40, 240));
     color:white;
