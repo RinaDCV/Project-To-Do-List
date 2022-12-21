@@ -1,11 +1,11 @@
 <section class="heading-section"> 
     <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-        <div class="navbar-item has-dropdown is-active">
-          <button class="navbar-link" (click)="toggleMenu()">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <button class="navbar-link " (click)="toggleMenu()">
             Menu
           </button>
       
-          <div class="navbar-dropdown" [hidden] = "!isMenuVisible" >
+          <div class="navbar-dropdown">
             <a class="navbar-item" [routerLink]="['/Working']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
               Working
             </a>
@@ -27,4 +27,3 @@
 
 
 <app-sticky-note></app-sticky-note>
-

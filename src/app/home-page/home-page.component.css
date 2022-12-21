@@ -13,11 +13,21 @@
         text-align: center;
     }
 button{
+    display: flex;
     color: black;
     padding: 20px;
+    width: 140px;
+    border: white;
+    
 }
+
 .navbar{
-    width: 92px;
+    display: flex;
+    width: 80px;
+    
+}
+.navbar-item{
+    width:120px;
 }
 h3{
     text-align: center;
