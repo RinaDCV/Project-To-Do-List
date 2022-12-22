@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditNoteDialogComponent } from './edit-note-dialog/edit-note-dialog.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { ArchiveComponent } from './archive/archive.component';
+import { TrashComponent } from './trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     NavComponent,
     StackComponent,
     StickyNoteComponent,
-    EditNoteDialogComponent
+    EditNoteDialogComponent,
+    ArchiveComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,

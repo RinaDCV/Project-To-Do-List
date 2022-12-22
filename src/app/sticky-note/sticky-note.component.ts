@@ -1,7 +1,7 @@
 import { NotExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { StickyNote } from '../shared/stickyNote.model';
-import { DataService } from '../shared/data.service'
+import { DataService } from '../shared/data.service';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { EditNoteDialogComponent } from '../edit-note-dialog/edit-note-dialog.component';
@@ -9,42 +9,36 @@ import { EditNoteDialogComponent } from '../edit-note-dialog/edit-note-dialog.co
 @Component({
   selector: 'app-sticky-note',
   templateUrl: './sticky-note.component.html',
-  styleUrls: ['./sticky-note.component.css']
+  styleUrls: ['./sticky-note.component.css'],
 })
 export class StickyNoteComponent implements OnInit {
-
   stickyNote: StickyNote[] = [];
 
-  showValidationErrors : boolean= false;
+  showValidationErrors: boolean = false;
 
-  constructor(private dataService: DataService, private dialog: MatDialog) { }
+  constructor(private dataService: DataService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.stickyNote = this.dataService.getAllStickyNote()
-
-   }
-
-  onFormSubmit(form: NgForm){
- 
-    // none of these code will be reachable if the form is invalid
-  
-    this.dataService.addstickyNote(new StickyNote(form.value.text));
-
-    this.showValidationErrors= false;
-    form.reset()
-   
-    if (form.invalid) return this.showValidationErrors= true;
-    else
-    return;
-
-
+    this.stickyNote = this.dataService.getAllStickyNote();
   }
 
-  setCompleted(stickyNote: StickyNote){
+  onFormSubmit(form: NgForm) {
+    // none of these code will be reachable if the form is invalid
+
+    this.dataService.addstickyNote(new StickyNote(form.value.text));
+
+    this.showValidationErrors = false;
+    form.reset();
+
+    if (form.invalid) return (this.showValidationErrors = true);
+    else return;
+  }
+
+  setCompleted(stickyNote: StickyNote) {
     //set stickyNote to completed with the green check
     stickyNote.completed = !stickyNote.completed;
   }
-  editStickyNote(stickyNote: StickyNote){
+  editStickyNote(stickyNote: StickyNote) {
     //need here an index of stickynote
     const index = this.stickyNote.indexOf(stickyNote);
 
@@ -52,20 +46,17 @@ export class StickyNoteComponent implements OnInit {
       width: '700px',
       data: stickyNote,
     });
-    
+
     //need here the where the user will enter new updated information
-    dialogRef.afterClosed().subscribe((result)=> {
-      if (result){
-        this.dataService.updateStickyNote(index,result);
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.dataService.updateStickyNote(index, result);
       }
     });
   }
- 
-  deleteStickyNote(stickyNote:StickyNote){
+
+  deleteStickyNote(stickyNote: StickyNote) {
     const index = this.stickyNote.indexOf(stickyNote);
     this.dataService.deleteStickyNote(index);
   }
-
-
 }
-

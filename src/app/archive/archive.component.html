@@ -8,14 +8,14 @@
         <i class="fas fa-bars"></i>
       </button>
       <nav [hidden]="!isMenuVisible">
-        <a routerLink="/archive">Archive</a>
-        <a routerLink="/trash">Trash</a>
-        <a [routerLink]="['/archive']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Archive</a>
+        <a href="#">Archive</a>
+        <a href="#">Trash</a>
+        <a [routerLink]="['/archive']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Trash</a>
      </nav>
 <h1 class="title is-1">ToDo List</h1>
+<h3>Archive</h3>
 
 </section>
 
 
 <app-sticky-note></app-sticky-note>
-
