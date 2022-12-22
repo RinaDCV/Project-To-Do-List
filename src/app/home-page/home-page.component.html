@@ -1,29 +1,18 @@
-<section class="heading-section"> 
-    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <button class="navbar-link " (click)="toggleMenu()">
-            Menu
-          </button>
-      
-          <div class="navbar-dropdown">
-            <a class="navbar-item" [routerLink]="['/Working']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-              Working
-            </a>
-            <a class="navbar-item" [routerLink]="['/Completed']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-              Completed
-            </a>
-            <a class="navbar-item" [routerLink]="['/Deleted']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-              Deleted
-            </a>
-          
-          </div>
-        </div>
-      </nav> 
-<h1 class="title is-1">ToDo List</h1>
+<section class="heading-section">
+  <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+    <div class="navbar-item has-dropdown is-hoverable">
+      <button class="navbar-link" (click)="toggleMenu()">Menu</button>
 
-<h3> In Progress </h3>
+      <div class="navbar-dropdown">
+        <a routerLink=""> Working </a>
+        <a routerLink="/archive"> Completed </a>
+        <a routerLink="/trash"> Deleted </a>
+      </div>
+    </div>
+  </nav>
+  <h1 class="title is-1">ToDo List</h1>
 
+  <h3>In Progress</h3>
 </section>
-
 
 <app-sticky-note></app-sticky-note>

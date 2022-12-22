@@ -12,20 +12,24 @@
         text-shadow: 0px 1px 2px (black 0.2)px;
         text-align: center;
     }
-    h3 {
-        font-weight:bold;
-        color: white;
-        text-shadow: 0px 1px 2px (black 0.2)px;
-        text-align: center;
-    }
-    .hamburger-menu {
-        background: black;
-        border: none;
-        cursor: pointer;
-        
-      }
-      
-      .hamburger-menu i {
-        color: #333;
-        font-size: 1.5em;
-      }
+button{
+    display: flex;
+    color: black;
+    padding: 20px;
+    width: 140px;
+    border: white;
+    
+}
+
+.navbar{
+    display: flex;
+    width: 80px;
+    
+}
+.navbar-item{
+    width:120px;
+}
+h3{
+    text-align: center;
+    font-size: 24px;
+}

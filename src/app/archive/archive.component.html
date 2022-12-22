@@ -1,21 +1,17 @@
 <section class="heading-section">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    <button class="hamburger-menu" (click)="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav [hidden]="!isMenuVisible">
-        <a href="#">Archive</a>
-        <a href="#">Trash</a>
-        <a [routerLink]="['/archive']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Trash</a>
-     </nav>
-<h1 class="title is-1">ToDo List</h1>
-<h3>Archive</h3>
+  <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+    <div class="navbar-item has-dropdown is-hoverable">
+      <button class="navbar-link" (click)="toggleMenu()">Menu</button>
 
+      <div class="navbar-dropdown">
+        <a routerLink=""> Working </a>
+        <a routerLink="/archive"> Completed </a>
+        <a routerLink="/trash"> Deleted </a>
+      </div>
+    </div>
+  </nav>
+  <h1 class="title is-1">ToDo List</h1>
+  <h3>Completed</h3>
 </section>
-
 
 <app-sticky-note></app-sticky-note>
