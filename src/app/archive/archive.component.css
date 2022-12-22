@@ -18,12 +18,14 @@ button{
     padding: 20px;
     width: 140px;
     border: white;
+    border-radius: 4px;
     
 }
 
 .navbar{
     display: flex;
-    width: 80px;
+    width: 121px;
+    border-radius: 5px;
     
 }
 .navbar-item{

@@ -36,4 +36,6 @@ export class StackComponent implements OnInit {
     this.deleteClicked.emit();
   }
 
+  
+
 }

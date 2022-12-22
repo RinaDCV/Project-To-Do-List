@@ -16,17 +16,21 @@ button{
     display: flex;
     color: black;
     padding: 20px;
-    width: 140px;
+    width: 121px;
     border: white;
+    border-radius: 4px;
+   
     
 }
 
 .navbar{
     display: flex;
-    width: 80px;
-    
+    width: 120px;
+    border-radius: 5px;
+   
 }
 .navbar-item{
+    
     width:120px;
 }
 h3{
@@ -35,6 +39,7 @@ h3{
 }
 
 footer{
+    
     background: linear-gradient(to right, rgb(98, 88, 238), rgb(193, 40, 240));
     padding: 5rem 1.5rem 5rem;
     margin-top: 100px;

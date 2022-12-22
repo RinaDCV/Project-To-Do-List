@@ -13,7 +13,7 @@ export class EditNoteDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<EditNoteDialogComponent>,
 
-    //iput dialog data here: (it is a token)used to pass existing text dialog
+    //input dialog data here: (it is a token)used to pass existing text dialog
     @Inject (MAT_DIALOG_DATA) public stickyNote: StickyNote) { }
 
 
