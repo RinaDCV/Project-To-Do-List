@@ -4,4 +4,6 @@ export class StickyNote {
         public text: string,
         public completed: boolean = false,
     ) {}
+
+
 }
