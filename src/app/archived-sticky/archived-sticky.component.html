@@ -1,0 +1,61 @@
+]
+<div class="container add-todo-box-container" >
+    <div class="add-todo-box">
+<!--  after we import ngforms we can use ngForm on all forms and do some event binding-->
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <h2> New Sticky Note</h2>
+            <div class="field is-grouped" style="margin: 0">
+                <p class="control is-expanded">
+                    <!-- here you can enter the max or min length of text 
+                         required-->
+                    <!-- # is made into the ngModel object-->
+                    <input ngModel #textField="ngModel" required 
+                                                        minlength="3" 
+                                                        maxlength="250" 
+                                                        name="text" 
+                                                        class="input" 
+                                                        type="text"  
+                                                        placeholder="Enter new Note...">
+                </p>
+                <p class="control">
+                  <!-- the button is disabled until the requirments are valid -->
+                  <button type="submit" [disabled]="textField.invalid" class="button">
+                    <i class="material-icons">add</i>
+                    ADD 
+                  </button>
+                </p>
+              </div>
+              
+          <div *ngIf ="textField.invalid && showValidationErrors">
+               <p class="help is-danger" *ngIf="textField!.errors?.['required']" 
+               >Please enter text for your sticky-note</p>
+              <p class="help is-danger" *ngIf="textField!.errors?.['minlength']" 
+               >Sticky-note must be atleast 3 characters</p>
+              <p class="help is-danger" *ngIf="textField!.errors?.['maxlengthd']" 
+               >Sticky-note can not exceed 250 characters</p>
+          </div> 
+            </form>
+
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+
+        <div class="todo-list">
+            <!-- these is we're we lisen to the buttons -->
+            <app-stack *ngFor= "let stickyNote of stickyNote" 
+                        [stickyNote]="stickyNote" 
+                        (stickyNoteClicked)="setCompleted(stickyNote)"
+                        (editClicked)="editStickyNote(stickyNote)"
+                        (deleteClicked)="deleteStickyNote(stickyNote)">
+            </app-stack>
+
+            </div>
+
+     
+
+        
+
+    </div>
+</section>

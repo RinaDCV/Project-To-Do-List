@@ -5,13 +5,13 @@ import { DataService } from '../shared/data.service';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { EditNoteDialogComponent } from '../edit-note-dialog/edit-note-dialog.component';
-
 @Component({
-  selector: 'app-sticky-note',
-  templateUrl: './sticky-note.component.html',
-  styleUrls: ['./sticky-note.component.css'],
+  selector: 'app-archived-sticky',
+  templateUrl: './archived-sticky.component.html',
+  styleUrls: ['./archived-sticky.component.css']
 })
-export class StickyNoteComponent implements OnInit {
+
+export class ArchivedStickyComponent implements OnInit {
   stickyNote: StickyNote[] = [];
 
   showValidationErrors: boolean = false;
@@ -19,7 +19,7 @@ export class StickyNoteComponent implements OnInit {
   constructor(private dataService: DataService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.stickyNote = this.dataService.getAllStickyNote();
+    this.stickyNote = this.dataService.getAllArchive();
   }
 
   onFormSubmit(form: NgForm) {
@@ -40,7 +40,6 @@ export class StickyNoteComponent implements OnInit {
     const index = this.stickyNote.indexOf(stickyNote);
     this.dataService.archiveStickyNote(index);
   }
-  
   editStickyNote(stickyNote: StickyNote) {
     //need here an index of stickynote
     const index = this.stickyNote.indexOf(stickyNote);

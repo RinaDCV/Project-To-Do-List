@@ -9,30 +9,43 @@ export class DataService {
 
  //creating a propery to contain the data
  
-  stickyNote:StickyNote [] = [
+  stickyNotes:StickyNote [] = [
    new StickyNote('this is a new test!', true),
    new StickyNote( 'loren ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, molestiae facilis, exercitationem impedit vitae tenetur accusantium, non eius quos neque sint mollitia cum aperiam excepturi et laboriosam provident illo asperiores!')
   ];
   
+  trash:StickyNote [] = [];
+  
+  archive:StickyNote [] = [];
+
   constructor() { }
 
 
   //creating methods
 getAllStickyNote() {
-  return this.stickyNote
+  return this.stickyNotes
 }
 
 addstickyNote(stickyNote: StickyNote) {
-  this.stickyNote.push(stickyNote)
+  this.stickyNotes.push(stickyNote);
 }
 
 updateStickyNote(index: number, updatedStickyNote: StickyNote){
-  this.stickyNote[index] = updatedStickyNote
+  this.stickyNotes[index] = updatedStickyNote
 }
-
+archiveStickyNote(index: number) {
+  this.archive.push(this.stickyNotes[index]);
+  this.stickyNotes.splice(index, 1);
+}
 deleteStickyNote(index: number) {
-  this.stickyNote.splice(index, 1)
+  this.trash.push(this.stickyNotes[index]);
+  this.stickyNotes.splice(index, 1);
 }
 
-
+getAllTrash() {
+  return this.trash;
+}
+getAllArchive() {
+  return this.archive;
+}
 }

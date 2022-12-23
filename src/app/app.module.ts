@@ -17,6 +17,8 @@ import { EditNoteDialogComponent } from './edit-note-dialog/edit-note-dialog.com
 import { MatDialogModule } from '@angular/material/dialog';
 import { ArchiveComponent } from './archive/archive.component';
 import { TrashComponent } from './trash/trash.component';
+import { DeletedStickyComponent } from './deleted-sticky/deleted-sticky.component';
+import { ArchivedStickyComponent } from './archived-sticky/archived-sticky.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { TrashComponent } from './trash/trash.component';
     StickyNoteComponent,
     EditNoteDialogComponent,
     ArchiveComponent,
-    TrashComponent
+    TrashComponent,
+    DeletedStickyComponent,
+    ArchivedStickyComponent
   ],
   imports: [
     BrowserModule,

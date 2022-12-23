@@ -7,11 +7,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditNoteDialogComponent } from '../edit-note-dialog/edit-note-dialog.component';
 
 @Component({
-  selector: 'app-sticky-note',
-  templateUrl: './sticky-note.component.html',
-  styleUrls: ['./sticky-note.component.css'],
+  selector: 'app-deleted-sticky',
+  templateUrl: './deleted-sticky.component.html',
+  styleUrls: ['./deleted-sticky.component.css']
 })
-export class StickyNoteComponent implements OnInit {
+export class DeletedStickyComponent implements OnInit {
   stickyNote: StickyNote[] = [];
 
   showValidationErrors: boolean = false;
@@ -19,7 +19,7 @@ export class StickyNoteComponent implements OnInit {
   constructor(private dataService: DataService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.stickyNote = this.dataService.getAllStickyNote();
+    this.stickyNote = this.dataService.getAllTrash();
   }
 
   onFormSubmit(form: NgForm) {
@@ -40,7 +40,6 @@ export class StickyNoteComponent implements OnInit {
     const index = this.stickyNote.indexOf(stickyNote);
     this.dataService.archiveStickyNote(index);
   }
-  
   editStickyNote(stickyNote: StickyNote) {
     //need here an index of stickynote
     const index = this.stickyNote.indexOf(stickyNote);
